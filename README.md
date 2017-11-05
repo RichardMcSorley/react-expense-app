@@ -1,8 +1,8 @@
-## React-Boileplate-v1
+## Expense-App
 
-plates n' boils
+Created using React-Router, React-Redux.
 
-### Markdown for later :wink:
+### Markdown for reference :wink:
 
 
 ```markdown
