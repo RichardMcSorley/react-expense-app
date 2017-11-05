@@ -1,6 +1,6 @@
 ## Expense-App
 
-Created using React-Router, React-Redux.
+Created using React-Router, React-Redux. 
 
 ### Markdown for reference :wink:
 
