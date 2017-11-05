@@ -3,15 +3,24 @@ import moment from 'moment';
 import {SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
-const now = moment();
-console.log(now.format('MMM Do, YYYY'));
 export default class ExpenseForm extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            description: props.expense ? props.expense.description : '',
+            amount: props.expense ? (props.expense.amount / 100).toString() : '',
+            note: props.expense ? props.expense.note : '',
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+            calendarFocused: false,
+            error: ''
+        };
+    }
     onDescriptionChange = ({target}) => {
         this.setState(()=>({ description: target.value }));
     };
     onAmountChange = ({target}) => {
         const {value} = target;
-        if(value.match(/^\d*(\.\d{0,2})?$/)){
+        if(!value || value.match(/^\d{1,}(\.\d{0,2})?$/)){
 
             this.setState(()=>({ amount: value }));
         }
@@ -21,22 +30,34 @@ export default class ExpenseForm extends Component {
         this.setState(()=>({ note: target.value }));
     }
     onDateChange = (createdAt)=>{
-        this.setState(()=>({createdAt}))
+        if(createdAt){
+            this.setState(()=>({createdAt}))
+        }
     }
     onFocusChange = ({focused})=>{
         this.setState(()=>({calendarFocused: focused}))
     }
-    state = {
-        description: '',
-        amount: '',
-        note: '',
-        createdAt: moment(),
-        calendarFocused: false
-        };
+    onSubmit=(e)=>{
+        e.preventDefault();
+        if(!this.state.description || !this.state.amount){
+            this.setState(()=>({error: 'Please provide description and amount.'}))
+        }else{
+            this.setState(()=>({error: ''}))
+            this.props.onSubmit({
+                description: this.state.description,
+                amount: parseFloat(this.state.amount, 10) * 100,
+                createdAt: this.state.createdAt.valueOf(),
+                note: this.state.note
+
+            })
+        }
+    }
+
   render() {
     return (
       <div>
-        <form>
+         {this.state.error && <p className="fucking-error">{this.state.error}</p>} 
+        <form onSubmit={this.onSubmit}>
             <input
                 type="text"
                 placeholder="Description"
