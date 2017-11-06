@@ -5,7 +5,7 @@ import DashboardPage from './../components/DashboardPage';
 import EditExpensePage from './../components/EditExpensePage';
 import Header from './../components/Header';
 import HelpPage from './../components/HelpPage';
-import NotFoundPage from './../components/NotFound';
+import NotFoundPage from './../components/NotFoundPage';
 
 const AppRouter = () => (
     <BrowserRouter>
