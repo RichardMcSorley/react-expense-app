@@ -13,10 +13,6 @@ import expenseSelector from './selectors/expenses';
 
 const store = configureStore();
 
-store.dispatch(expenseActions.addExpense({description: 'Water Bill', amount: 4500}));
-store.dispatch(expenseActions.addExpense({description: 'Gas Bill', createdAt: 1000}));
-store.dispatch(expenseActions.addExpense({description: 'Rent', amount: 109400}));
-
 const jsx = (
     <Provider store={store}>
         <AppRouter />
