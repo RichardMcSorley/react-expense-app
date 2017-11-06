@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss'
+import 'react-dates/lib/css/_datepicker.css';
 import ReactDOM  from 'react-dom';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
