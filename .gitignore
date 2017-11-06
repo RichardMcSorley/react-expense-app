@@ -1,7 +1,5 @@
 # Production files
-
-public/bundle*
-public/styles*
+public/dist/
 
 # Logs
 logs
