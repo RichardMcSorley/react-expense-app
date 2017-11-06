@@ -1,3 +1,7 @@
+# Production files
+
+public/
+
 # Logs
 logs
 *.log
