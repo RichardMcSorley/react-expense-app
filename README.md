@@ -1,4 +1,4 @@
-## Expense-App
+## React-Expense-App
 
 Created using React-Router, React-Redux. 
 
