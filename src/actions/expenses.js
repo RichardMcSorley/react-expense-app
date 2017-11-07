@@ -20,7 +20,7 @@ export const startAddExpense = (expenseData = {}) =>{
     dispatch(addExpense({
       id: ref.key,
       ...expense
-    }))
+    }));
   });
  };
 };
@@ -35,3 +35,23 @@ export const editExpense = (id, updates) => ({
   id,
   updates
 });
+
+export const setExpenses = (expenses)=>({
+  type: 'SET_EXPENSES',
+  expenses
+});
+
+export const startSetExpenses = ()=>{
+  return (dispatch)=>{
+    return db.ref('expenses').once('value').then((snap)=>{
+      let expenses = [];
+      snap.forEach((cSnap)=>{
+        expenses.push({
+          id: cSnap.key,
+          ...cSnap.val()
+        });
+      });
+      dispatch(setExpenses(expenses))
+    })
+  };
+};
