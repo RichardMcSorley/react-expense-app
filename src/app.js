@@ -10,6 +10,7 @@ import configureStore from './store/configureStore';
 import * as expenseActions from './actions/expenses';
 import * as filterActions from './actions/filters';
 import expenseSelector from './selectors/expenses';
+import './firebase/firebase';
 
 const store = configureStore();
 
