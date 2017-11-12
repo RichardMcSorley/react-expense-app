@@ -1,8 +1,8 @@
-import React from "react";
+import { AddExpensePage } from "./../../components/AddExpensePage";
 import { shallow } from "enzyme";
 import expenses from "../fixtures/expenses";
 import moment from "moment";
-import { AddExpensePage } from "./../../components/AddExpensePage";
+import React from "react";
 
 let startAddExpense, history, wrapper;
 

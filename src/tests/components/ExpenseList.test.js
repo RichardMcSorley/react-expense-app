@@ -1,7 +1,7 @@
-import React from "react";
-import { shallow } from "enzyme";
 import { ExpenseList } from "./../../components/ExpenseList";
+import { shallow } from "enzyme";
 import expenses from "../fixtures/expenses";
+import React from "react";
 
 test("should render ExpenseList correctly", () => {
   const wrapper = shallow(<ExpenseList expenses={expenses} />);

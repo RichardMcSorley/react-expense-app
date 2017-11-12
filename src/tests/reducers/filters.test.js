@@ -1,6 +1,6 @@
+import { setEndDate } from "./../../actions/filters";
 import filterReducer from "../../reducers/filters";
 import moment from "moment";
-import { setEndDate } from "./../../actions/filters";
 
 test("should setup default filter value", () => {
   const state = filterReducer(undefined, { type: "@@INIT" });

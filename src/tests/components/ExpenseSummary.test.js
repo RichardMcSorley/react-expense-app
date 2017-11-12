@@ -1,8 +1,8 @@
 import { ExpenseSummary } from "./../../components/ExpenseSummary";
-import React from "react";
 import { shallow } from "enzyme";
 import expenses from "../fixtures/expenses";
 import getTotals from "../../selectors/totals";
+import React from "react";
 
 let expenseCount, expensesTotal, wrapper;
 

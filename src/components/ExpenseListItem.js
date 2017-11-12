@@ -1,9 +1,9 @@
-import React from "react";
 import { connect } from "react-redux";
-import { removeExpense } from "../actions/expenses";
 import { Link } from "react-router-dom";
+import { removeExpense } from "../actions/expenses";
 import moment from "moment";
 import numeral from "numeral";
+import React from "react";
 
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
   return (

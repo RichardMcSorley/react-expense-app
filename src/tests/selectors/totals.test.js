@@ -1,5 +1,5 @@
-import selectExpensesTotal from "../../selectors/totals";
 import expenses from "../fixtures/expenses";
+import selectExpensesTotal from "../../selectors/totals";
 
 test("should return 0 if no expenses", () => {
   const res = selectExpensesTotal([]);

@@ -1,17 +1,17 @@
 import {
   addExpense,
-  removeExpense,
   editExpense,
-  startAddExpense,
+  removeExpense,
   setExpenses,
-  startSetExpenses,
-  startRemoveExpense,
+  startAddExpense,
   startEditExpense
+  startRemoveExpense,
+  startSetExpenses,
 } from "./../../actions/expenses";
-import expenses from "../fixtures/expenses";
 import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import db from "../../firebase/firebase";
+import expenses from "../fixtures/expenses";
+import thunk from "redux-thunk";
 
 const createMockStore = configureMockStore([thunk]);
 

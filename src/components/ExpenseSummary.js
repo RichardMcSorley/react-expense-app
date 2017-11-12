@@ -1,7 +1,7 @@
-import numeral from "numeral";
-import React, { Component } from "react";
 import { connect } from "react-redux";
 import getTotals from "../selectors/totals";
+import numeral from "numeral";
+import React, { Component } from "react";
 
 export class ExpenseSummary extends Component {
   render() {

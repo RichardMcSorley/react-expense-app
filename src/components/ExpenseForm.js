@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import moment from "moment";
 import { SingleDatePicker } from "react-dates";
+import moment from "moment";
+import React, { Component } from "react";
 
 export default class ExpenseForm extends Component {
   constructor(props) {
