@@ -2,7 +2,7 @@ import {
   setEndDate,
   setStartDate,
   setTextFilter,
-  sortByAmount
+  sortByAmount,
   sortByDate,
 } from "./../../actions/filters";
 import moment from "moment";

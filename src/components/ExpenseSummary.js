@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import getTotals from "../selectors/totals";
 import numeral from "numeral";
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 export class ExpenseSummary extends Component {
   render() {
@@ -10,11 +11,16 @@ export class ExpenseSummary extends Component {
       "$0,0.00"
     );
     return (
-      <div>
-        <h1>
-          Viewing {this.props.expenseCount} {expenseWord} totalling{" "}
-          {formatTotal}
-        </h1>
+      <div className="page-header">
+        <div className="content-container">
+          <h1 className="page-header__title">
+            Viewing <span>{this.props.expenseCount} {expenseWord}</span> totalling{" "}
+            <span>{formatTotal}</span>
+          </h1>
+          <div className="page-header__actions">
+            <Link className="button" to="/create">Add Expense</Link>
+          </div>
+        </div>
       </div>
     );
   }

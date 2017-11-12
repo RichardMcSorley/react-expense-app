@@ -11,6 +11,7 @@ import configureStore from "./store/configureStore";
 import expenseSelector from "./selectors/expenses";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -27,7 +28,7 @@ const renderApp = () => {
     hasRendered = true;
   }
 };
-ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+ReactDOM.render(<LoadingPage />, document.getElementById("app"));
 
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById("app"));
